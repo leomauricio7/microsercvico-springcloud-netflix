@@ -3,6 +3,7 @@ package com.github.leomauricio7.crud.service;
 import com.github.leomauricio7.crud.data.dto.ProdutoDTO;
 import com.github.leomauricio7.crud.entity.Produto;
 import com.github.leomauricio7.crud.exception.ResourceNotFoundException;
+import com.github.leomauricio7.crud.message.ProdutoSendMessage;
 import com.github.leomauricio7.crud.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,14 +17,18 @@ import java.util.Optional;
 public class ProdutoService {
 
     private final ProdutoRepository produtoRepository;
+    private final ProdutoSendMessage produtoSendMessage;
 
     @Autowired
-    public ProdutoService(ProdutoRepository produtoRepository) {
+    public ProdutoService(ProdutoRepository produtoRepository, ProdutoSendMessage produtoSendMessage) {
         this.produtoRepository = produtoRepository;
+        this.produtoSendMessage = produtoSendMessage;
     }
 
     public ProdutoDTO create(ProdutoDTO produtoDTO){
         ProdutoDTO prodDtoRt = ProdutoDTO.create(produtoRepository.save(Produto.create(produtoDTO)));
+        // envia para o rabbitmq
+        produtoSendMessage.sendMessage(prodDtoRt);
         return prodDtoRt;
     }
 
