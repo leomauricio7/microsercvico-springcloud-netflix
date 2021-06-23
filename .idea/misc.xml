@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/crud/pom.xml" />
+        <option value="$PROJECT_DIR$/pagamento/pom.xml" />
       </list>
     </option>
   </component>
