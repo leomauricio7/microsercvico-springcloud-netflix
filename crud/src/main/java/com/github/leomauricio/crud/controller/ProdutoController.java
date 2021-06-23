@@ -39,7 +39,7 @@ public class ProdutoController {
     }
 
     @GetMapping(produces = {"application/json", "application/xml", "application/x-yaml"})
-    public ResponseEntity<ProdutoDTO> findAll(
+    public ResponseEntity<?> findAll(
             @RequestParam(value = "page", defaultValue = "0") int page,
             @RequestParam(value = "limit", defaultValue = "12") int limit,
             @RequestParam(value = "direction", defaultValue = "asc") String direction
@@ -55,7 +55,7 @@ public class ProdutoController {
 
         PagedModel<EntityModel<ProdutoDTO>> pageModel = pagedResourcesAssembler.toModel(produtos);
 
-        return new ResponseEntity(pageModel, HttpStatus.OK);
+        return new ResponseEntity<>(pageModel, HttpStatus.OK);
     }
 
     @PostMapping(
