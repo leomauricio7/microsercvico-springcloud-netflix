@@ -11,12 +11,14 @@
         <module name="pagamento" />
         <module name="auth" />
         <module name="discovery" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="auth" target="11" />
       <module name="crud" target="11" />
       <module name="discovery" target="11" />
+      <module name="gateway" target="11" />
       <module name="pagamento" target="11" />
     </bytecodeTargetLevel>
   </component>
@@ -25,6 +27,7 @@
       <module name="auth" options="-parameters" />
       <module name="crud" options="-parameters" />
       <module name="discovery" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="pagamento" options="-parameters" />
     </option>
   </component>

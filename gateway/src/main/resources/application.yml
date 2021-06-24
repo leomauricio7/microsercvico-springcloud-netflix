@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ms-gateway
+
+# Discovery Eureka
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/registry/eureka/
+
+# Configuração do  Zuul Proxi
+zuul:
+  prefix: /api
+  ignored-services: "*"
+
+  routes:
+    ms-crud: # nome do serviço
+      path: /crud/** # endpoints do serviço
+      service-id: ms-crud # id do serviço
+      strip-prefix: false #prefixo da rota
+      custom-sensitive-headers: true #passagem de token no header
+
+    ms-pagamento: # nome do serviço
+      path: /pagamento/** # endpoints do serviço
+      service-id: ms-pagamento # id do serviço
+      strip-prefix: false #prefixo da rota
+      custom-sensitive-headers: true #passagem de token no header
+
+    ms-auth: # nome do serviço
+      path: /auth/** # endpoints do serviço
+      service-id: ms-auth # id do serviço
+      strip-prefix: false #prefixo da rota
+      custom-sensitive-headers: true #passagem de token no header
