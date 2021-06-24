@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: crud
+    name: md-pagamento
   jpa:
     show-sql: true
     hibernate:
@@ -20,12 +20,14 @@ spring:
     username: root
     password: 123mudar
 
+  # configuração do RabbitMQ
   rabbitmq:
     host: localhost
     port: 5672
     username: admin
     password: admin
 
+# keys values para configuração do fila e do exchange do RabbitMQ
 crud:
   rabbitmq:
     exchange: crud.exchange

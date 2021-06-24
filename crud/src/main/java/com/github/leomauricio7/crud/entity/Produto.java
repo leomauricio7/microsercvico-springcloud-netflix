@@ -8,12 +8,13 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name="produto")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-@Table(name="produto")
+
 public class Produto implements Serializable {
 
     private static final long serialVersionUID = -5739495078527883468L;
