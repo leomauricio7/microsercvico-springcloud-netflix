@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: md-pagamento
+    name: ms-pagamento
   jpa:
     show-sql: true
     hibernate:
