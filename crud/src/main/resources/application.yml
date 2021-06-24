@@ -26,8 +26,15 @@ spring:
     port: 5672
     username: admin
     password: admin
+
 # keys values para configuração do routing-key e do exchange do RabbitMQ
 crud:
   rabbitmq:
     exchange: crud.exchange
     routingkey: crud.produto.routingkey
+
+#configuração do spring security
+security:
+  jwt:
+    token:
+      secret-key: chave_microservices # key assinatura do token

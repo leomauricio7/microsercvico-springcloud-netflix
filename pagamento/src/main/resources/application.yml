@@ -32,3 +32,9 @@ crud:
   rabbitmq:
     exchange: crud.exchange
     queue: crud.produto.queue
+
+#configuração do spring security
+security:
+  jwt:
+    token:
+      secret-key: chave_microservices # key assinatura do token
