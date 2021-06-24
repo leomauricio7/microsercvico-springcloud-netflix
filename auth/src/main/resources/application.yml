@@ -24,5 +24,5 @@ spring:
 security:
   jwt:
     token:
-      secret-key: chave_microservices # key assinatura do token
+      secret-key: a_#@tjo%^q182p-fe)xu*xoh@_(i*+xn3667%s3ezx#e_3h15( # key assinatura do token
       expire-length: 360000 # tempo de expiração
