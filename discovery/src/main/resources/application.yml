@@ -1,0 +1,23 @@
+server:
+  port: 8761 #porta da aplicação
+  servlet:
+    context-path: /registry
+
+spring:
+  application:
+    name: registry
+
+eureka:
+  instance:
+    hostname: localhost # host do eureka
+  client: #congiguração dos clientes que o servidor irar escutar
+    register-with-eureka: false #indica que a instancia do eureka não precisa registrada
+    fetch-registry: false # indica que a aplicaçao nao precisar buscar informação no eureka
+
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+  server:
+    eviction-interval-time-in-ms: 1000 # evitar time out no server
+    #enableSelfPreservation: false # desabilita o avido de replicas
+    wait-time-in-ms-when-sync-empty: 0
