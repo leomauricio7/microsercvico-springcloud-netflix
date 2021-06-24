@@ -25,4 +25,4 @@ security:
   jwt:
     token:
       secret-key: chave_microservices # key assinatura do token
-      exprires-length: 360000 # tempo de expiração
+      expire-length: 360000 # tempo de expiração
