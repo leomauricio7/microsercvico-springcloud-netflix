@@ -22,7 +22,7 @@ public class JwtTokenProvider {
     @Value("${security.jwt.token.secret-key}")
     private String secreteKey;
 
-    @Value("${security.jwt.token.expire}")
+    @Value("${security.jwt.token.expire-length}")
     private Long expire;
 
     @Qualifier("userService") // colocar o nome do seu qualifier

@@ -76,7 +76,7 @@ public class User implements UserDetails, Serializable {
 
     @Override
     public String getPassword() {
-        return null;
+        return password;
     }
 
     @Override
@@ -101,6 +101,6 @@ public class User implements UserDetails, Serializable {
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return this.enabled;
     }
 }
